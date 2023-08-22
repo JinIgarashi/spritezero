@@ -170,7 +170,7 @@ function generateLayoutInternal(options, callback) {
           if (el.getAttribute('viewBox')) {
             var viewBox = el.getAttribute('viewBox').split(/\s+/);
             svgPath = svgPath.translate(-viewBox[0], -viewBox[1])
-				.scale(w/(viewBox[2] - viewBox[0]), h/(viewBox[3] - viewBox[1]));
+            .scale((w/options.pixelRatio)/(viewBox[2] - viewBox[0]), (h/options.pixelRatio)/(viewBox[3] - viewBox[1]));
           }
           svgPath = svgPath.abs().unshort().unarc();
 
